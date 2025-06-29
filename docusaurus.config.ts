@@ -74,7 +74,7 @@ const config: Config = {
     navbar: {
       title: '',
       logo: {
-        src: 'img/logo.png',
+        src: 'img/logo.svg',
       },
       items: [
         {
