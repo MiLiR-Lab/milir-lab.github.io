@@ -23,7 +23,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'MiLiR-Lab', // Usually your GitHub org/user name.
   projectName: 'milir-lab.github.io', // Usually your repo name.
-  deploymentBranch: 'pages', // Usually your repo branch.
+  deploymentBranch: 'gh-pages', // Usually your repo branch.
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -81,7 +81,7 @@ const config: Config = {
           type: 'dropdown',
           sidebarId: 'devToolsSidebar',
           position: 'left',
-          label: '使用工具',
+          label: '通用工具',
           items: [
             // {
             //   type: 'doc',
