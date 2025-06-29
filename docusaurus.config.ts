@@ -85,19 +85,19 @@ const config: Config = {
           items: [
             {
               type: 'doc',
-              label: 'Git 使用指南',
+              label: 'Docusaurus',
+              docId: 'docusaurus/README',
+            },
+            {
+              type: 'doc',
+              label: 'Git GitHub GitLab',
               docId: 'git/README',
             },
             {
               type: 'doc',
-              label: 'Docusaurus 使用指南',
-              docId: 'docusaurus/README',
+              label: 'Windows Subsystem for Linux',
+              docId: 'wsl/README',
             },
-            // {
-            //   type: 'doc',
-            //   label: 'Windows Subsystem for Linux',
-            //   docId: 'wsl/README',
-            // },
           ]
         },
         {
