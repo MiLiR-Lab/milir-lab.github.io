@@ -83,16 +83,16 @@ const config: Config = {
           position: 'left',
           label: '通用工具',
           items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Docusaurus',
-            //   docId: 'docusaurus/README',
-            // },
-            // {
-            //   type: 'doc',
-            //   label: 'Git GitHub GitLab',
-            //   docId: 'git/README',
-            // },
+            {
+              type: 'doc',
+              label: 'Git 使用指南',
+              docId: 'git/README',
+            },
+            {
+              type: 'doc',
+              label: 'Docusaurus 使用指南',
+              docId: 'docusaurus/README',
+            },
             // {
             //   type: 'doc',
             //   label: 'Windows Subsystem for Linux',
