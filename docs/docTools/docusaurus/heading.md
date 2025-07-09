@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Markdown 标题
+title: 文档标题
 ---
 
 import Tabs from '@theme/Tabs';

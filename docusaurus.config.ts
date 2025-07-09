@@ -69,7 +69,7 @@ const config: Config = {
             {
               type: 'doc',
               label: '文档语法',
-              docId: 'docTools/README',
+              docId: 'docTools/docusaurus/README',
             },
             {
               type: 'doc',

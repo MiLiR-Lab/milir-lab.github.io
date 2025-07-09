@@ -53,3 +53,21 @@
 .markdown h4:not(.no-counter)::before {
   content: counter(h2) "." counter(h3) "." counter(h4) " ";
 }
+
+/* Custom font settings */
+:root {
+  --ifm-font-family-base: 
+    "KaiTi",
+    "PingFang SC",
+    "HarmonyOS Sans SC",
+    "Microsoft YaHei",
+    "Noto Sans SC",
+    system-ui,
+    sans-serif;
+
+  --ifm-font-family-monospace: 
+    "KaiTi",
+    "Cascadia Code",
+    "Fira Code",
+    monospace;
+}
