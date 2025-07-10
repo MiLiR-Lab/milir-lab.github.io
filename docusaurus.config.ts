@@ -138,7 +138,7 @@ const config: Config = {
           {
             type: 'doc',
             label: 'ROS2 开发',
-            docId: 'ros2/README',
+            docId: 'ros2/ros2_base/README',
           },
           ]
         },
