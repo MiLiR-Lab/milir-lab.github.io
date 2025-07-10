@@ -68,7 +68,7 @@ const config: Config = {
           items: [
             {
               type: 'doc',
-              label: '文档语法',
+              label: '文档开发',
               docId: 'docTools/docusaurus/README',
             },
             {
