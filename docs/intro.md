@@ -1,4 +1,7 @@
-# MiLiR-Lab
+---
+sidebar_position: 0
+title: MiLiR-Lab
+---
 
 MiLiR-Lab 是纯个人开发和开源的网站，旨在分享和记录我在学习和实践的经验。
 

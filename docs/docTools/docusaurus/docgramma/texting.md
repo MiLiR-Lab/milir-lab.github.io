@@ -238,3 +238,20 @@ Markdown 本身不支持字体，但可以使用 React/JSX 语法来实现。
 </TabItem>
 </Tabs>
 
+## 正文分割
+
+使用三个 `-` 来实现分割。
+
+---
+<Tabs>
+<TabItem value="markdown" label="实现语法">
+```
+---
+```
+</TabItem>
+<TabItem value="preview" label="效果预览">
+
+---
+
+</TabItem>
+</Tabs>

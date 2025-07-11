@@ -1,10 +1,27 @@
 ---
-sidebar_position: 8
-title: 文档图文链接
+sidebar_position: 4
+title: 文档引用
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+使用 `>` 符号来实现引用的效果。
+
+## 文字引用
+
+<Tabs>
+<TabItem value="markdown" label="实现语法">
+```
+> Hello World
+```
+</TabItem>
+<TabItem value="preview" label="效果预览">
+
+> Hello World
+
+</TabItem>
+</Tabs>
 
 ## 网址跳转
 
@@ -74,17 +91,17 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## 文档跳转
+## 文档引用
 
 <Tabs>
 <TabItem value="markdown" label="实现语法">
 ```
-[MiLiR-Lab](../../intro.md)
+[MiLiR-Lab](../../../intro.md)
 ```
 </TabItem>
 <TabItem value="preview" label="效果预览">
 
-[MiLiR-Lab](../../intro.md)
+[MiLiR-Lab](../../../intro.md)
 
 </TabItem>
 </Tabs>

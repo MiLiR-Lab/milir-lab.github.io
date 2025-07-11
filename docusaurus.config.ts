@@ -142,6 +142,7 @@ const config: Config = {
           },
           ]
         },
+        {to: 'docs/contact', label: '联系方式', position: 'right'},
         {
           href: 'https://github.com/MiLiR-Lab',
           label: 'GitHub',

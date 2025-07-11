@@ -4,17 +4,13 @@ MiliR Lab：https://milir-lab.github.io/
 
 GitHub Repo：https://github.com/MiLiR-Lab/milir-lab.github.io
 
-MiliR Lab 是用 Docusaurus 搭建的个人网站，主要面向中文用户！
+MiliR Lab 是用 Docusaurus 搭建的个人网站！
 
 ## 环境搭建
 
 Docusaurus 是由一组 npm 包组成的，需要 Node.js 作为运行环境。
 
 ### 安装 Node.js
-
-```bash
-yarn
-```
 
 - 官网： [Node.js](https://nodejs.org/) 
 
@@ -59,7 +55,15 @@ yarn -v
 
 ### 下载 MiLiR Lab
 ```bash
-git clone git@github.com:MiLiR-Lab/milir-lab.github.io.git
+git clone https://github.com/MiLiR-Lab/milir-lab.github.io.git
+```
+
+### 安装 MiLiR Lab
+
+进入项目目录，运行以下命令安装本地环境：
+
+```bash
+yarn install
 ```
 
 ### 运行 MiLiR Lab
