@@ -74,7 +74,7 @@ const config: Config = {
             {
               type: 'doc',
               label: '虚拟环境',
-              docId: 'venv/README',
+              docId: 'venv/windows/README',
             },
             {
               type: 'doc',
