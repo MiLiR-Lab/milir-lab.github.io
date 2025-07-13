@@ -3,8 +3,6 @@ sidebar_position: 0
 title: 安装环境
 ---
 
-WSL (Windows Subsystem for Linux) 是 Windows 平台的一项重要功能，它允许用户在 Windows 操作系统上运行 Linux 发行版。
-
 ## 安装 WSL
 
 以管理员身份运行 `PowerShell` 或 `cmd`，然后运行下面命令：该命令会自动启用 WSL 功能并安装最新的 Ubuntu 发行版。
@@ -18,7 +16,7 @@ wsl --install
   style={{width: '100%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}} 
 />  
 
-:::warning
+:::warning 错误提示
 若在安装最新的 Ubuntu 发行版出现 `由于未安装所需的特性，无法启动操作···` 错误提示！
 
 <img 

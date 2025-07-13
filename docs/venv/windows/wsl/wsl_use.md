@@ -313,6 +313,10 @@ Ubuntu (默认值)
 
 使用 `--distribution` 参数可以启动指定的 Linux 发行版。
 
+:::tip 参数说明
+`<DistroName>` 为可用的 Linux 发行版的名称。
+:::
+
 ```
 wsl --distribution <DistroName>
 
@@ -345,10 +349,6 @@ wsl --unregister Ubuntu
 ### 安装指定的 Linux 发行版
 
 使用 `--install` 参数可以安装指定的 Linux 发行版。
-
-:::warning
-`<DistroName>` 为可用的 Linux 发行版的名称。
-:::
 
 ```
 wsl --install <DistroName>
