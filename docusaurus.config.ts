@@ -78,8 +78,13 @@ const config: Config = {
             },
             {
               type: 'doc',
-              label: '团队合作',
-              docId: 'teamWork/README',
+              label: '科学上网',
+              docId: 'vpn/clash_verge/README',
+            },
+            {
+              type: 'doc',
+              label: '团队合作（Git）',
+              docId: 'teamWork/git-hub-lab/README',
             },
           ]
         },

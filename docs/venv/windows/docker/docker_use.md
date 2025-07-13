@@ -206,13 +206,41 @@ docker pull hello-world
 ```
 Using default tag: latest
 latest: Pulling from library/hello-world
-c9c5fd25a1bd: Pull complete
-Digest: sha256:0b6a027b5cf322f09f6706c754e086a232ec1ddba835c8a15c6cb74ef0d43c29
+e6590344b1a5: Pull complete
+Digest: sha256:ec153840d1e635ac434fab5e377081f17e0e15afab27beb3f726c3265039cfff
 Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest
 ```
   </p>
 </details>
+
+## 查看镜像
+
+使用 `images` 命令可以查看 Docker 镜像。
+
+```
+docker images
+```
+
+<details>
+  <summary>终端输出</summary>
+  <p>
+```
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+hello-world   latest    74cc54e27dc4   5 months ago   10.1kB
+```
+  </p>
+</details>
+
+## 删除镜像
+
+使用 `rmi` 命令可以删除 Docker 镜像。
+
+```
+docker rmi <image_id>
+# 删除 hello-world 镜像
+docker rmi hello-world
+```
 
 ## 运行容器
 
@@ -232,23 +260,57 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
 To generate this message, Docker took the following steps:
-
-1.  The Docker client contacted the Docker daemon.
-2.  The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (arm64v8)
-3.  The Docker daemon created a new container from that image which runs the
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
     executable that produces the output you are currently reading.
-4.  The Docker daemon streamed that output to the Docker client, which sent it
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
     to your terminal.
 
 To try something more ambitious, you can run an Ubuntu container with:
-$ docker run -it ubuntu bash
+ $ docker run -it ubuntu bash
 
 Share images, automate workflows, and more with a free Docker ID:
-https://hub.docker.com/
+ https://hub.docker.com/
 
 For more examples and ideas, visit:
-https://docs.docker.com/get-started/
+ https://docs.docker.com/get-started/
 ```
   </p>
 </details>
+
+## 查看容器
+
+使用 `ps` 命令可以查看正在运行的 Docker 容器。
+
+```
+docker ps
+```
+
+<details>
+  <summary>终端输出</summary>
+  <p>
+```
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+  </p>
+</details>
+
+## 停止容器
+
+使用 `stop` 命令可以停止正在运行的 Docker 容器。
+
+```
+docker stop <container_id>
+```
+
+## 清理容器
+
+使用 `container prune` 命令可以清理所有停止的 Docker 容器。
+
+```
+docker container prune
+```
+
+

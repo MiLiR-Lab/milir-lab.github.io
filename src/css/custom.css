@@ -66,8 +66,14 @@
 }
 
 
-/* Target specific elements in the sidebar for more granular control*/
+/* Styles for sidebar navigation items for better readability */
 .theme-doc-sidebar-item-category > .menu__list-item-collapsible,
 .theme-doc-sidebar-item-link > .menu__link {
-   font-size: 15px; /* Sets font size to 16 pixels for these elements */
- }
+   font-size: 15px; /* Consistent font size for sidebar items */
+}
+
+/* Ensure tables take full width of their container */
+table {
+  width: 100% !important;        /* Make table span full width */
+  display: table !important;     /* Ensure table display property is set */
+}
