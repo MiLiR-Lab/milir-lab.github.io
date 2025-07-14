@@ -84,10 +84,6 @@ git config --global --unset user.email "18179208773@163.com"
 为了避免 `master` 一词可能关联的历史负面含义（如主从压迫关系），Git 社区改用 main 作为默认分支名称，以促进更具包容性的技术环境。
 :::
 
-:::tip 说明
-如果没有本地仓库，将无法配置局部信息
-:::
-
 <Tabs>
   <TabItem value="局部配置" label="局部配置" default>
 只在当前仓库生效。
