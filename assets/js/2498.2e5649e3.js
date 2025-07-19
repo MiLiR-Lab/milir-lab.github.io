@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmilir_lab_github_io=self.webpackChunkmilir_lab_github_io||[]).push([[2498],{2498:(e,i,r)=>{r.d(i,{createArchitectureServices:()=>c.S});var c=r(3009);r(5817)}}]);
