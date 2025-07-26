@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: 文档插件 - 图表
+sidebar_position: 5
+title: 图表绘制
 ---
 
 import Tabs from '@theme/Tabs';
