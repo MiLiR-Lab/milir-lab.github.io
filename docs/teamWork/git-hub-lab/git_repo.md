@@ -68,7 +68,7 @@ SSH 协议需要先配置 SSH 密钥，然后使用 SSH 地址克隆远程仓库
 
 :::tip SSH 密钥
 
-配置 SSH 密钥请参考 [SSH 密钥](./git_ssh_key.md) 教程
+配置 SSH 密钥请参考 [SSH 密钥](./GitHub/github_ssh_key.md) 教程
 
 :::
 
