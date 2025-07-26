@@ -69,7 +69,7 @@
 /* Styles for sidebar navigation items for better readability */
 .theme-doc-sidebar-item-category > .menu__list-item-collapsible,
 .theme-doc-sidebar-item-link > .menu__link {
-   font-size: 15px; /* Consistent font size for sidebar items */
+   font-size: 18px; /* Consistent font size for sidebar items */
 }
 
 /* Ensure tables take full width of their container */
