@@ -148,6 +148,20 @@ file:/home/milir/.gitconfig  init.defaultbranch=main
 </p>
 </details>
 
+## 屏蔽版本控制
+
+对于无需版本控制的文件，可以新建 `.gitignore` 文件，将不需要纳入版本控制的文件添加到 `.gitignore` 文件中。
+
+```
+touch .gitignore
+```
+
+若需要 Git 忽略所有以 `.a` 结尾的文件，可以在 `.gitignore` 文件中添加 `*.a`。
+
+```
+*.a
+```
+
 ## 终端显示分支
 
 使用 [Oh My Zsh](https://ohmyz.sh/) 开源工具来管理和增强 Z Shell 终端显示，内置大量插件，我们可以使用该工具来实时显示当前目录所处的 Git 分支。
