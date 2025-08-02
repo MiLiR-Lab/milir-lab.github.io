@@ -44,7 +44,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/MiLiR-Lab/milir-lab.github.io',
+            'https://github.com/MiLiR-Lab/milir-lab.github.io/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
