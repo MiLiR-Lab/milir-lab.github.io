@@ -82,31 +82,52 @@ const config: Config = {
       items: [
         {
           type: 'dropdown',
-          sidebarId: 'toolsSidebar',
+          sidebarId: 'docusSidebar',
           position: 'left',
           label: '网站开发',
           items: [
             {
               type: 'doc',
-              label: '文档开发',
-              docId: 'tools/README',
+              label: 'Docusaurus 使用',
+              docId: 'tools/docusaurus/README',
             },
           ],
         },
-        {to: '/blog', label: '网站更新', position: 'right'},
-        {
-          href: 'https://github.com/MiLiR-Lab/milir-lab.github.io',
-          label: 'GitHub',
-          position: 'right',
-        },
-        {to: 'docs/contact', label: '联系方式', position: 'right'},
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} MiLiR Lab, Inc. Built with Docusaurus.`,
-    },
+  footer: {
+    style: 'dark',
+    links: [
+      {
+        title: '文档',
+        items: [
+          {
+            label: '联系我们',
+            to: '/docs/contact',
+          },
+        ],
+      },
+      {
+        title: '社区',
+        items: [
+          {
+            label: 'GitHub',
+            href: 'https://github.com/MiLiR-Lab/milir-lab.github.io',
+          },
+        ],
+      },
+      {
+        title: '更新情报',
+        items: [
+          {
+            label: '网站更新',
+            href: '/blog',
+          },
+        ],
+      },
+    ],
+    copyright: `Copyright © ${new Date().getFullYear()} MiLiR Lab, Inc. Built with Docusaurus.`,
+  },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
