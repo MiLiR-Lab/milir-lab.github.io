@@ -93,7 +93,7 @@ const config: Config = {
             },
           ],
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: '网站更新', position: 'right'},
         {
           href: 'https://github.com/MiLiR-Lab/milir-lab.github.io',
           label: 'GitHub',

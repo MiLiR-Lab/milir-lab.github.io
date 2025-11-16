@@ -44,3 +44,18 @@
 .tabs-center .tabs__item {
   text-align: center;
 }
+
+/* Hide the original "Recent posts" text in the blog sidebar */
+.sidebarItemTitle_pO2u {
+  font-size: 0;
+  color: transparent;
+}
+
+/* Insert a custom Chinese label using a pseudo-element */
+.sidebarItemTitle_pO2u::before {
+  content: "最新更新";
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-900);
+  visibility: visible;
+}
