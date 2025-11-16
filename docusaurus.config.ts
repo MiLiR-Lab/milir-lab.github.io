@@ -30,8 +30,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
@@ -74,24 +74,32 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'MiLiR Lab',
+      title: ' ',
       logo: {
-        alt: 'MiLiR Lab Logo',
+        alt: ' ',
         src: 'img/logo.svg',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          type: 'dropdown',
+          sidebarId: 'toolsSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: '网站开发',
+          items: [
+            {
+              type: 'doc',
+              label: '文档开发',
+              docId: 'tools/README',
+            },
+          ],
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: '网站更新', position: 'right'},
         {
           href: 'https://github.com/MiLiR-Lab/milir-lab.github.io',
           label: 'GitHub',
           position: 'right',
         },
+        {to: 'docs/contact', label: '联系方式', position: 'right'},
       ],
     },
     footer: {
