@@ -82,14 +82,14 @@ const config: Config = {
       items: [
         {
           type: 'dropdown',
-          sidebarId: 'toolsSidebar',
+          sidebarId: 'docusSidebar',
           position: 'left',
           label: '网站开发',
           items: [
             {
               type: 'doc',
-              label: '文档开发',
-              docId: 'tools/README',
+              label: 'Docusaurus 使用',
+              docId: 'tools/docusaurus/README',
             },
           ],
         },
