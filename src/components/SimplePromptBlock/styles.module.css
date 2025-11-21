@@ -1,0 +1,118 @@
+.textBox {
+  position: relative;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--ifm-code-background, #111827);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.headerLeft,
+.headerRight {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+}
+
+.headerLeft {
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.headerRight {
+  justify-content: flex-end;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.headerText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #f9fafb;
+  white-space: nowrap;
+}
+
+.body {
+  padding: 0.6rem 0.75rem 0rem 0.75rem;
+}
+
+.body pre {
+  margin: 0;
+  background: transparent;
+}
+
+.body code {
+  font-size: 0.85rem;
+}
+
+.windowControls {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.windowDot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background-color: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.6);
+}
+
+.dotMinimize {
+  background-color: #facc15;
+}
+
+.dotMaximize {
+  background-color: #22c55e;
+}
+
+.dotClose {
+  background-color: #ef4444;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: -0.15rem;
+  padding: 0 0 0.65rem;
+}
+
+.footerLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #ffffff;
+  background-color: rgba(64, 92, 156, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+@media screen and (max-width: 750px) {
+  .textBox {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .headerLeft,
+  .headerRight {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .body {
+    padding: 0.5rem 0.6rem 0rem 0.6rem;
+  }
+}
