@@ -6,18 +6,28 @@ tags: []
 ---
 <!-- truncate -->
 
-<CodeBlock os="Ubuntu@Milir">
+<Terminal os="Ubuntu@Milir">
 
-```
+```python
 print("Hello World")
 ```
 
-</CodeBlock>
+</Terminal>
 
-<CodeBlock os="Ubuntu@Milir" tip="This is a tip">
+<Terminal os="Ubuntu@Milir" tip="This is a tip">
 
-```
+```python
 print("Hello World")
 ```
 
-</CodeBlock>
+</Terminal>
+
+<File title="hello.py">
+<p>
+
+```python
+print("Hello World")
+```
+
+</p>
+</File>
