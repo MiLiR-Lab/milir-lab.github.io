@@ -14,7 +14,7 @@ export default function Collapsible({
   children,
   defaultCollapsed = false,
   className,
-}: CollapsibleProps): JSX.Element {
+}: CollapsibleProps): React.ReactElement {
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
 
   return (

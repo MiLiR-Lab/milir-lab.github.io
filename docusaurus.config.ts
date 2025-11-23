@@ -67,6 +67,11 @@ const config: Config = {
     ],
   ],
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -88,7 +93,7 @@ const config: Config = {
           items: [
             {
               type: 'doc',
-              label: 'Docusaurus 使用',
+              label: '文档开发',
               docId: 'tools/docusaurus/README',
             },
           ],
@@ -99,7 +104,7 @@ const config: Config = {
     style: 'dark',
     links: [
       {
-        title: '文档',
+        title: '联系方式',
         items: [
           {
             label: '联系我们',
@@ -108,7 +113,7 @@ const config: Config = {
         ],
       },
       {
-        title: '社区',
+        title: '开源社区',
         items: [
           {
             label: 'GitHub',
@@ -126,7 +131,7 @@ const config: Config = {
         ],
       },
     ],
-    copyright: `Copyright © ${new Date().getFullYear()} MiLiR Lab, Inc. Built with Docusaurus.`,
+    // copyright: `Copyright © ${new Date().getFullYear()} MiLiR Lab, Inc. Built with Docusaurus.`,
   },
     prism: {
       theme: prismThemes.github,
