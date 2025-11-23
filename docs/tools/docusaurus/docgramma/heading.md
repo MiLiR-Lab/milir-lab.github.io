@@ -3,9 +3,6 @@ sidebar_position: 1
 title: 文档标题
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## 一级标题
 
 标题前面添加 `#` 符号来创建一级标题。

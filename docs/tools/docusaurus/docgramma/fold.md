@@ -3,10 +3,6 @@ sidebar_position: 4
 title: 文档折叠
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Collapsible from '@site/src/components/Collapsible';
-
 ## 文档折叠
 
 使用 `Collapsible` 组件来创建带最小化/最大化按钮的折叠窗口。

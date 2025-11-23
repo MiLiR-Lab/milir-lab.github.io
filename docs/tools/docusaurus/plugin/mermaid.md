@@ -3,9 +3,6 @@ sidebar_position: 5
 title: 图表绘制
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 Mermaid 是一个基于 JavaScript 的图表绘制工具，可以方便的实现文档的图表展示。
 
 :::info Docusaurus

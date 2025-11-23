@@ -3,9 +3,6 @@ sidebar_position: 4
 title: 文档表格
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 - 使用 `|` 符号分割每列
 - 使用 `-` 符号来创建表头
 - 使用 `:` 符号来控制对齐

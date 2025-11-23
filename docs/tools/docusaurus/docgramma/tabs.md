@@ -3,9 +3,6 @@ sidebar_position: 5
 title: 文档标签组
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 Docusaurus 自带的 `<Tabs>` 组件可以直接在 Markdown 文档中使用。
 
 ## 单个标签

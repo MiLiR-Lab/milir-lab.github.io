@@ -3,9 +3,6 @@ sidebar_position: 2
 title: 文档正文
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## 正文换行
 
 ### 方法一

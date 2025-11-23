@@ -3,9 +3,6 @@ sidebar_position: 4
 title: 文档引用
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 使用 `>` 符号来实现引用的效果。
 
 ## 文字引用

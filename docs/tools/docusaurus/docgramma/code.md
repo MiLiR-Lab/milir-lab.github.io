@@ -3,9 +3,6 @@ sidebar_position: 6
 title: 文档代码块
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## 代码块
 
 将代码放到两个 ` ``` ` 符号中间来实现代码块。
