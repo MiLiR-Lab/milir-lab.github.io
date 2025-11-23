@@ -3,9 +3,6 @@ sidebar_position: 3
 title: 文档列表
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## 无序列表
 
 使用 `-`、`*` 或 `+` 符号来创建无序列表。

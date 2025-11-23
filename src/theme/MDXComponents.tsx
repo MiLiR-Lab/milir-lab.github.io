@@ -12,5 +12,5 @@ export default {
   TabItem,
   DocCardList,
   Terminal: SimplePromptBlock,
-  File: Collapsible,
+  CodeFile: Collapsible,
 };

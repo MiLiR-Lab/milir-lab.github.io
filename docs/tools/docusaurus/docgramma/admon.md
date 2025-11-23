@@ -3,9 +3,6 @@ sidebar_position: 7
 title: 文档告示框
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## 备注
 
 <Tabs>

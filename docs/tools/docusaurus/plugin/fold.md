@@ -9,7 +9,7 @@ title: 折叠优化
 
 在 `src\components` 文件夹下新建 `Collapsible` 文件夹，然后在文件夹下新建 `index.tsx` 文件和 `styles.module.css` 文件，内容如下：
 
-<File title="src\components\SimplePromptBlock\index.tsx" defaultCollapsed={true}>
+<CodeFile title="src\components\SimplePromptBlock\index.tsx" defaultCollapsed={true}>
 <p>
 
 ```tsx
@@ -68,9 +68,9 @@ export default function Collapsible({
 ```
 
 </p>
-</File>
+</CodeFile>
 
-<File title="src\components\SimplePromptBlock\styles.module.css" defaultCollapsed={true}>
+<CodeFile title="src\components\SimplePromptBlock\styles.module.css" defaultCollapsed={true}>
 <p>
 
 ```css
@@ -164,13 +164,13 @@ export default function Collapsible({
 ```
 
 </p>
-</File>
+</CodeFile>
 
 ## 导入全局组件
 
 修改 `src\theme\MDXComponents.tsx` 文件，内容如下：将 `Collapsible` 组件导入到 `MDXComponents` 中。
 
-<File title="src\theme\MDXComponents.tsx" defaultCollapsed={true}>
+<CodeFile title="src\theme\MDXComponents.tsx" defaultCollapsed={true}>
 <p>
 
 ```tsx {7,15} showLineNumbers
@@ -188,19 +188,19 @@ export default {
   TabItem,
   DocCardList,
   Terminal: SimplePromptBlock,
-  File: Collapsible,
+  CodeFile: Collapsible,
 };
 ```
 
 </p>
-</File>
+</CodeFile>
 
-使用 `<File>` 标签来实现代码块。
+使用 `<CodeFile>` 标签来实现代码块。
 
 <Tabs>
 <TabItem value="markdown" label="实现语法">
 ~~~
-<File title="hello.c" defaultCollapsed={true}>
+<CodeFile title="hello.c" defaultCollapsed={true}>
 <p>
 
 ```c
@@ -213,12 +213,12 @@ int main() {
 ```
 
 </p>
-</File>
+</CodeFile>
 ~~~
 </TabItem>
 <TabItem value="preview" label="效果预览">
 
-<File title="hello.c" defaultCollapsed={true}>
+<CodeFile title="hello.c" defaultCollapsed={true}>
 <p>
 
 ```c
@@ -230,7 +230,7 @@ int main() {
 }
 ```
 </p>
-</File>
+</CodeFile>
 
 </TabItem>
 </Tabs>

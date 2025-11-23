@@ -3,9 +3,6 @@ sidebar_position: 3
 title: 文档部署
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 我们需要修改 `docusaurus.config.ts` 文件中的参数再部署。
 
 ## 修改参数

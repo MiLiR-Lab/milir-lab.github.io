@@ -29,6 +29,12 @@ yarn build
 
 打开终端命令行，运行以下命令查看 website 网站。
 
+:::tip 访问
+
+同一局域网下设备可以访问 `IP:3000` 预览网站。
+
+:::
+
 ```bash
 yarn serve
 ```
