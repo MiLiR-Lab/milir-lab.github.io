@@ -22,7 +22,7 @@ print("Hello World")
 
 </Terminal>
 
-<File title="hello.py">
+<File title="hello.py" defaultCollapsed={true}>
 <p>
 
 ```python

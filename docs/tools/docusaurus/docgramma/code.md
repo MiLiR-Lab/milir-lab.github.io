@@ -61,3 +61,32 @@ Hello World
 ```
 </TabItem>
 </Tabs>
+
+## 代码块：高亮
+
+添加 `title` 键到第一个 ` ``` ` 符号后面来实现代码块标题添加。
+
+<Tabs>
+<TabItem value="markdown" label="实现语法">
+~~~
+```c {4-5} showLineNumbers
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+~~~
+</TabItem>
+<TabItem value="preview" label="效果预览">
+```c {4-5} showLineNumbers
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+</TabItem>
+</Tabs>

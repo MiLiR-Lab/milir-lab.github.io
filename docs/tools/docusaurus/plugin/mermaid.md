@@ -22,7 +22,7 @@ yarn add @docusaurus/theme-mermaid
 
 ## 配置 Mermaid
 
-打开 `docusaurus.config.ts` 文件，添加下面的内容到 `presets` 中。
+打开 `docusaurus.config.ts` 文件，添加下面的内容到 `presets` 和 `themeConfig` 中间。
 
 ```ts
   markdown: {
@@ -30,6 +30,31 @@ yarn add @docusaurus/theme-mermaid
   },
   themes: ['@docusaurus/theme-mermaid'],
 ```
+
+<File title="docusaurus.config.ts">
+<p>
+
+```ts {9-12} showLineNumbers
+    ···
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
+  themeConfig: {
+    ···
+
+```
+
+</p>
+</File>
 
 ## 使用 Mermaid
 

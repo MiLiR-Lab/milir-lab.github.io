@@ -1,24 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
 export interface SimplePromptBlockProps {
-  /** Optional OS label shown in the top-left, e.g. Linux / Ubuntu / Mac. */
   os?: string;
-  /** Optional background color for the left header section. */
   platformBg?: string;
-  /** Optional background color for the right header section. */
   languageBg?: string;
-  /** Optional extra class name for the outer container. */
   className?: string;
-  /** Optional tip displayed centered below the code block. */
   tip?: string;
-  /** Content area, usually a fenced code block. */
+  defaultCollapsed?: boolean;
   children: React.ReactNode;
 }
 
-const DEFAULT_PLATFORM_BG = "#22c55e"; // Similar to Tailwind emerald-500.
-const DEFAULT_LANGUAGE_BG = "#ef4444"; // Similar to Tailwind red-500.
+const DEFAULT_PLATFORM_BG = "#22c55e";
+const DEFAULT_LANGUAGE_BG = "#ef4444";
 
 const SimplePromptBlock: React.FC<SimplePromptBlockProps> = ({
   os,
@@ -26,11 +21,25 @@ const SimplePromptBlock: React.FC<SimplePromptBlockProps> = ({
   languageBg = DEFAULT_LANGUAGE_BG,
   className,
   tip,
+  defaultCollapsed = false,
   children,
 }) => {
+  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
+
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
   return (
     <div className={clsx(styles.textBox, className)}>
-      <div className={styles.headerRow}>
+      <div
+        className={styles.headerRow}
+        onClick={toggleCollapse}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && toggleCollapse()}
+        aria-expanded={!isCollapsed}
+      >
         <div className={styles.headerLeft} style={{ backgroundColor: platformBg }}>
           {os && <span className={styles.headerText}>{os}</span>}
         </div>
@@ -46,11 +55,15 @@ const SimplePromptBlock: React.FC<SimplePromptBlockProps> = ({
           </div>
         </div>
       </div>
-      <div className={styles.body}>{children}</div>
-      {tip && (
-        <div className={styles.footer}>
-          <span className={styles.footerLabel}>{tip}</span>
-        </div>
+      {!isCollapsed && (
+        <>
+          <div className={styles.body}>{children}</div>
+          {tip && (
+            <div className={styles.footer}>
+              <span className={styles.footerLabel}>{tip}</span>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
