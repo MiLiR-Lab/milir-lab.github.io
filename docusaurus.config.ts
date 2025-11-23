@@ -27,11 +27,20 @@ const config: Config = {
   onBrokenLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // i18n configuration for multi-language support
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    locales: ['zh-Hans', 'en'],
+    localeConfigs: {
+      'zh-Hans': {
+        label: '简体中文',
+        direction: 'ltr',
+      },
+      'en': {
+        label: 'English',
+        direction: 'ltr',
+      },
+    },
   },
 
   presets: [
@@ -40,8 +49,10 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          path: 'docs',
+          routeBasePath: '/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           editUrl:
             'https://github.com/MiLiR-Lab/milir-lab.github.io/tree/main/',
         },
@@ -69,6 +80,8 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
+  onBrokenLinks: 'warn',
+  onBrokenAnchors: 'warn',
   themes: [
     '@docusaurus/theme-mermaid',
     [
@@ -88,13 +101,20 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    // i18n support for the navbar
     navbar: {
-      title: ' ',
+      title: 'MiLiR Lab',
       logo: {
-        alt: ' ',
+        alt: 'MiLiR Lab Logo',
         src: 'img/logo.svg',
       },
       items: [
+        // 语言切换器
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        // 其他导航项
         {
           type: 'dropdown',
           sidebarId: 'docusSidebar',
