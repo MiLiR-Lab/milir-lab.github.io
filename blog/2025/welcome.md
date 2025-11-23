@@ -22,7 +22,7 @@ print("Hello World")
 
 </Terminal>
 
-<File title="hello.py" defaultCollapsed={true}>
+<CodeFile title="hello.py" defaultCollapsed={true}>
 <p>
 
 ```python
@@ -30,4 +30,4 @@ print("Hello World")
 ```
 
 </p>
-</File>
+</CodeFile>

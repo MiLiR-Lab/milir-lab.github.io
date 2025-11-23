@@ -28,7 +28,7 @@ yarn add @docusaurus/theme-mermaid
   themes: ['@docusaurus/theme-mermaid'],
 ```
 
-<File title="docusaurus.config.ts">
+<CodeFile title="docusaurus.config.ts">
 <p>
 
 ```ts {9-12} showLineNumbers
@@ -51,7 +51,7 @@ yarn add @docusaurus/theme-mermaid
 ```
 
 </p>
-</File>
+</CodeFile>
 
 ## 使用 Mermaid
 

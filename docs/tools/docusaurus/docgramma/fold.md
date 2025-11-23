@@ -11,17 +11,17 @@ title: 文档折叠
 <TabItem value="markdown" label="实现语法">
 
 ```jsx
-<Collapsible title="折叠标题">
+<CodeFile title="折叠标题">
   <p>折叠内容</p>
-</Collapsible>
+</CodeFile>
 ```
 
 </TabItem>
 <TabItem value="preview" label="效果预览">
 
-<Collapsible title="折叠标题">
+<CodeFile title="折叠标题">
   <p>折叠内容</p>
-</Collapsible>
+</CodeFile>
 
 </TabItem>
 </Tabs>

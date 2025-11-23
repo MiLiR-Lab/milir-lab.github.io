@@ -9,7 +9,7 @@ title: 代码块优化
 
 在 `src\components` 文件夹下新建 `SimplePromptBlock` 文件夹，然后在文件夹下新建 `index.tsx` 文件和 `styles.module.css` 文件，内容如下：
 
-<File title="src\components\SimplePromptBlock\index.tsx" defaultCollapsed={true}>
+<CodeFile title="src\components\SimplePromptBlock\index.tsx" defaultCollapsed={true}>
 <p>
 
 ```tsx
@@ -76,9 +76,9 @@ export default SimplePromptBlock;
 ```
 
 </p>
-</File>
+</CodeFile>
 
-<File title="src\components\SimplePromptBlock\styles.module.css" defaultCollapsed={true}>
+<CodeFile title="src\components\SimplePromptBlock\styles.module.css" defaultCollapsed={true}>
 <p>
 
 ```css
@@ -203,13 +203,13 @@ export default SimplePromptBlock;
 ```
 
 </p>
-</File>
+</CodeFile>
 
 ## 导入全局组件
 
 修改 `src\theme\MDXComponents.tsx` 文件，内容如下：将 `SimplePromptBlock` 组件导入到 `MDXComponents` 中。
 
-<File title="src\theme\MDXComponents.tsx" defaultCollapsed={true}>
+<CodeFile title="src\theme\MDXComponents.tsx" defaultCollapsed={true}>
 <p>
 
 ```tsx {6,13} showLineNumbers
@@ -230,7 +230,7 @@ export default {
 ```
 
 </p>
-</File>
+</CodeFile>
 
 使用 `<Terminal>` 标签来实现代码块。
 
