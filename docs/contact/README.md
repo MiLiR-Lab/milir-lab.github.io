@@ -3,7 +3,7 @@ sidebar_position: 1
 title: 联系方式
 ---
 
-目前只提供微信公众号和个人微信联系方式，欢迎大家联系和提供建议！
+MiLiR-Lab 是开源的网站，旨在分享和记录学习和实践的经验。
 
 <Tabs className="tabs-center">
   <TabItem value="wechat" label="个人微信">
