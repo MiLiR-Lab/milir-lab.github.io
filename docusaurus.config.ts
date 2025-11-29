@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'MiLiR Lab',
-  tagline: 'Apply what you learn',
+  // tagline: 'Apply what you learn',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -103,7 +103,7 @@ const config: Config = {
     },
     // i18n support for the navbar
     navbar: {
-      title: 'MiLiR Lab',
+      title: '',
       logo: {
         alt: 'MiLiR Lab Logo',
         src: 'img/logo.svg',
@@ -132,36 +132,8 @@ const config: Config = {
     },
   footer: {
     style: 'dark',
-    links: [
-      {
-        title: '联系方式',
-        items: [
-          {
-            label: '联系我们',
-            to: '/docs/contact',
-          },
-        ],
-      },
-      {
-        title: '开源社区',
-        items: [
-          {
-            label: 'GitHub',
-            href: 'https://github.com/MiLiR-Lab/milir-lab.github.io',
-          },
-        ],
-      },
-      {
-        title: '更新情报',
-        items: [
-          {
-            label: '网站更新',
-            href: '/blog',
-          },
-        ],
-      },
-    ],
-    // copyright: `Copyright © ${new Date().getFullYear()} MiLiR Lab, Inc. Built with Docusaurus.`,
+    links: [],  // 清空默认链接
+    copyright: `© ${new Date().getFullYear()} MiLiR Lab. Built with Docusaurus.`,
   },
     prism: {
       theme: prismThemes.github,

@@ -1,69 +1,90 @@
-import type {ReactNode} from 'react';
+// src/components/HomepageFeatures/index.tsx
+import React, { useState } from 'react';
 import clsx from 'clsx';
-import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Heading from '@theme/Heading';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  image: string;
+  description: string;
+  link: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    title: '思考（Mind）',
+    image: '/img/mind.webp',
+    description: '探索思维的深度，激发创新灵感',
+    link: 'https://github.com/MiLiR-Lab/milir-lab.github.io'
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    title: '灵感（Light）',
+    image: '/img/light.webp',
+    description: '捕捉灵感瞬间，点亮创意火花',
+    link: '/contact'
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    title: '研究（Research）',
+    image: '/img/research.webp',
+    description: '深入研究探索，推动知识边界',
+    link: '/blog'
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, image, description, link }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+    <a
+      href={link}
+      className={styles.featureItem}
+      target={link.startsWith('http') ? '_blank' : '_self'}
+      rel="noopener noreferrer"
+    >
+      <div className={styles.featureImageContainer}>
+        <img
+          src={image}
+          alt={title}
+          className={styles.featureImage}
+          loading="lazy"
+        />
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className={styles.featureContent}>
+        <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+        {description && <p className={styles.featureDescription}>{description}</p>}
       </div>
-    </div>
+    </a>
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+// Remove the JSX.Element return type annotation
+export default function HomepageFeatures() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+        <div className={styles.dropdownContainer}>
+          <button
+            className={styles.dropdownButton}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-controls="features-dropdown"
+          >
+            关于我们
+            <span className={clsx(styles.arrow, { [styles.arrowOpen]: isOpen })}>▼</span>
+          </button>
+          <p className={styles.subtitle}>MiLiR-Lab 是一个开放的网站，旨在共享和记录学习和实践的成果。</p>
+
+          {isOpen && (
+            <div
+              id="features-dropdown"
+              className={styles.featuresGrid}
+            >
+              {FeatureList.map((props, idx) => (
+                <Feature key={idx} {...props} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
