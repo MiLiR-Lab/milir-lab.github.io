@@ -1,44 +1,93 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
+import { useState } from 'react';
+import type { ReactNode } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+// 图片列表 - 替换成你的图片路径和对应链接
+const imageItems = [
+  {
+    src: '/img/contact.webp',
+    alt: 'Contact',
+    link: '/contact'  // 替换成实际链接
+  },
+  {
+    src: '/img/history.webp',
+    alt: 'History',
+    link: '/history'  // 替换成实际链接
+  },
+  {
+    src: '/img/open-source.webp',
+    alt: 'Open Source',
+    link: '/open-source'  // 替换成实际链接
+  },
+  {
+    src: '/img/mind.webp',
+    alt: 'Mind',
+    link: '/mind'  // 替换成实际链接
+  },
+  {
+    src: '/img/research.webp',
+    alt: 'Research',
+    link: '/research'  // 替换成实际链接
+  }
+];
+
+function ImageCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevious = () => {
+    setCurrentIndex(prevIndex =>
+      prevIndex === 0 ? imageItems.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex(prevIndex =>
+      prevIndex === imageItems.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const currentItem = imageItems[currentIndex];
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
+    <div className={styles.carousel}>
+      <button className={styles.arrowButton} onClick={goToPrevious}>
+        &lt;
+      </button>
+
+      <a
+        href={currentItem.link}
+        className={styles.imageLink}
+      >
+        <img
+          src={currentItem.src}
+          alt={currentItem.alt}
+          className={styles.carouselImage}
+        />
+      </a>
+
+      <button className={styles.arrowButton} onClick={goToNext}>
+        &gt;
+      </button>
+    </div>
   );
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      title={siteConfig.title}
+      description={siteConfig.tagline}>
+      <div className={styles.carouselContainer}>
+        <ImageCarousel />
+      </div>
       <main>
-        <HomepageFeatures />
+        {/* 这里可以放其他主要内容 */}
       </main>
+      <HomepageFeatures />
     </Layout>
   );
 }

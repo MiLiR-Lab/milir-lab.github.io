@@ -16,19 +16,19 @@ const FeatureList: FeatureItem[] = [
     title: '思考（Mind）',
     image: '/img/mind.webp',
     description: '探索思维的深度，激发创新灵感',
-    link: 'https://github.com/MiLiR-Lab/milir-lab.github.io'
+    link: ''
   },
   {
     title: '灵感（Light）',
     image: '/img/light.webp',
     description: '捕捉灵感瞬间，点亮创意火花',
-    link: '/contact'
+    link: ''
   },
   {
     title: '研究（Research）',
     image: '/img/research.webp',
     description: '深入研究探索，推动知识边界',
-    link: '/blog'
+    link: ''
   },
 ];
 
