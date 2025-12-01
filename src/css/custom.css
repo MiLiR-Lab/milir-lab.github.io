@@ -119,8 +119,3 @@ table {
   justify-content: center;
   gap: 4rem;
 }
-
-/* Center-align each footer link item */
-.footer__link-item {
-  text-align: center;
-}
