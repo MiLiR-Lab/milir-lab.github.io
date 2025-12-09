@@ -7,7 +7,7 @@ const socialLinks = [
   {
     logo: 'img/open-source.webp',
     url: 'https://github.com/MiLiR-Lab/milir-lab.github.io',
-    label: '开源代码',
+    label: '开源仓库',
     width: 16,
     height: 16
   },

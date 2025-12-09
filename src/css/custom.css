@@ -119,3 +119,15 @@ table {
   justify-content: center;
   gap: 4rem;
 }
+
+.nav-icon-join {
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+.nav-icon-join img {
+  height: 28px;
+  display: block;
+  transform: translateY(3px);
+}
