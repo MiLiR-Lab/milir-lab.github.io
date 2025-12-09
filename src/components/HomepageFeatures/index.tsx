@@ -1,6 +1,4 @@
-// src/components/HomepageFeatures/index.tsx
-import React, { useState } from 'react';
-import clsx from 'clsx';
+import React from 'react';
 import styles from './styles.module.css';
 import Heading from '@theme/Heading';
 
@@ -56,35 +54,21 @@ function Feature({ title, image, description, link }: FeatureItem) {
   );
 }
 
-// Remove the JSX.Element return type annotation
 export default function HomepageFeatures() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <section className={styles.features}>
       <div className="container">
         <div className={styles.dropdownContainer}>
-          <button
-            className={styles.dropdownButton}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-expanded={isOpen}
-            aria-controls="features-dropdown"
-          >
-            关于我们
-            <span className={clsx(styles.arrow, { [styles.arrowOpen]: isOpen })}>▼</span>
-          </button>
           <p className={styles.subtitle}>MiLiR-Lab 是一个开放的网站，旨在共享和记录学习和实践的成果。</p>
 
-          {isOpen && (
-            <div
-              id="features-dropdown"
-              className={styles.featuresGrid}
-            >
-              {FeatureList.map((props, idx) => (
-                <Feature key={idx} {...props} />
-              ))}
-            </div>
-          )}
+          <div
+            id="features-dropdown"
+            className={styles.featuresGrid}
+          >
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
