@@ -128,6 +128,11 @@ const config: Config = {
             },
           ],
         },
+        {
+          type: 'html',
+          position: 'right',
+          value: `<a href="/join-us" class="navbar__item navbar__link nav-icon-join" aria-label=""><img src="/img/join-us.svg" alt="" /></a>`,
+        },
       ],
     },
   footer: {

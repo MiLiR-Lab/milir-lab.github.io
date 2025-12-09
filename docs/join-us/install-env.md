@@ -27,7 +27,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 点击 `Next` 选项，接受许可协议。
 
 <img
-  src="/img/git-license.webp"
+  src="/img/join-us/git-license.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -36,7 +36,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择 Git 的安装位置，建议使用默认位置，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-install-path.webp"
+  src="/img/join-us/git-install-path.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -45,7 +45,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择需要安装的组件，建议使用默认设置，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-select-components.webp"
+  src="/img/join-us/git-select-components.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -54,7 +54,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择开始菜单文件夹，建议使用默认设置，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-start-menu-folder.webp"
+  src="/img/join-us/git-start-menu-folder.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -63,7 +63,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择默认编辑器，可切换成常用的文本编辑器，默认是使用 Vim 作为文本编辑器，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-default-editor.webp"
+  src="/img/join-us/git-default-editor.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -72,7 +72,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择默认分支名称，建议修改为 `main` 作为默认分支名称，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-default-branch.webp"
+  src="/img/join-us/git-default-branch.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -81,7 +81,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择调整 PATH 环境变量的方式，建议选择默认选项，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-adjust-path-environment-variable.webp"
+  src="/img/join-us/git-adjust-path-environment-variable.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -90,7 +90,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择 SSH 执行程序，建议使用默认选项，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-ssh-executable.webp"
+  src="/img/join-us/git-ssh-executable.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -99,7 +99,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择 HTTPS 后端，建议使用默认选项，点击 `Next` 选项继续。
 
 <img
-  src="/img/git-https-backend.webp"
+  src="/img/join-us/git-https-backend.webp"
   style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -108,7 +108,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择行结束转换方式，建议使用默认选项，点击 `Next` 选项继续。
 
 <img
-    src="/img/git-line-ending-conversion.webp"
+    src="/img/join-us/git-line-ending-conversion.webp"
     style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -117,7 +117,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择终端仿真器，建议使用默认选项，点击 `Next` 选项继续。
 
 <img
-    src="/img/git-terminal-emulator.webp"
+    src="/img/join-us/git-terminal-emulator.webp"
     style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -126,7 +126,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择默认 Git 行为，建议使用默认选项，点击 `Next` 选项继续。
 
 <img
-    src="/img/git-default-git-behavior.webp"
+    src="/img/join-us/git-default-git-behavior.webp"
     style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -135,7 +135,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择凭证管理器，建议使用默认选项，点击 `Next` 选项继续。
 
 <img
-    src="/img/git-credential-manager.webp"
+    src="/img/join-us/git-credential-manager.webp"
     style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -144,7 +144,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 选择配置额外选项，建议使用默认选项，点击 `Install` 选项开始正式安装。
 
 <img
-    src="/img/git-extra-options.webp"
+    src="/img/join-us/git-extra-options.webp"
     style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -153,7 +153,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 安装完成后，点击 `Finish` 选项退出安装向导。
 
 <img
-    src="/img/git-complete-installation.webp"
+    src="/img/join-us/git-complete-installation.webp"
     style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
@@ -220,11 +220,6 @@ Node.js 是一个开源的、跨平台的 JavaScript 运行时环境，允许开
 
 访问 [Node.js 下载页面](https://nodejs.org/en/download) ，依次选择 Node.js v24.11.1(LTS) -> Linux -> fnm -> Yarn 获取下载和安装 Yarn 命令。
 
-<img
-    src="/img/nodejs-installation.webp"
-    style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
-/>
-
 <Terminal os="Linux@Milir" tip="">
 
 ```bash
@@ -253,11 +248,6 @@ yarn -v
   <TabItem value="macOS" label="macOS">
 
 访问 [Node.js 下载页面](https://nodejs.org/en/download) ，依次选择 Node.js v24.11.1(LTS) -> macOS -> fnm -> Yarn 获取下载和安装 Yarn 命令。
-
-<img
-    src="/img/nodejs-installation.webp"
-    style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
-/>
 
 <Terminal os="Linux@Milir" tip="">
 

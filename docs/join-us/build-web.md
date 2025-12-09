@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 10
 title: 网站搭建
 ---
 
@@ -52,15 +52,15 @@ cat ~/.ssh/id_ed25519.pub
 复制输出的公钥内容，登录 GitHub 账号，进入 `Settings` -> `SSH and GPG keys` 页面，点击 `New SSH key` 按钮。
 
 <img
-  src="/img/github-ssh-keys.webp"
-  style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
+  src="/img/join-us/github-ssh-keys.webp"
+  style={{width: '100%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
 在 `Title` 输入框中填写密钥名称，在 `Key` 输入框中粘贴公钥内容，点击 `Add SSH key` 按钮完成添加。
 
 <img
-  src="/img/github-add-ssh-key.webp"
-  style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
+  src="/img/join-us/github-add-ssh-key.webp"
+  style={{width: '100%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
 ## Fork 仓库
@@ -68,15 +68,15 @@ cat ~/.ssh/id_ed25519.pub
 访问 [MiLiR Lab](https://github.com/MiLiR-Lab/milir-lab.github.io) 仓库页面，点击右上角的 `Fork` 按钮，将该仓库 Fork 到自己的 GitHub 账号下。
 
 <img
-  src="/img/git-fork.webp"
-  style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
+  src="/img/join-us/git-fork.webp"
+  style={{width: '100%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
 建议使用默认的仓库名称 `milir-lab.github.io`，然后点击 `Create fork` 按钮完成 Fork 操作。
 
 <img
-  src="/img/git-create-fork.webp"
-  style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
+  src="/img/join-us/git-create-fork.webp"
+  style={{width: '100%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
 ## 拉取源码
@@ -92,8 +92,8 @@ git clone git@github.com:WuMinlong/milir-lab.github.io.git
 </Terminal>
 
 <img
-  src="/img/git-clone-repo.webp"
-  style={{width: '50%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
+  src="/img/join-us/git-clone-repo.webp"
+  style={{width: '100%', maxWidth: '1200px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
 />
 
 ## 运行网站
