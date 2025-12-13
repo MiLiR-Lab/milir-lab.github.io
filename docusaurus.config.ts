@@ -131,7 +131,7 @@ const config: Config = {
         {
           type: 'html',
           position: 'right',
-          value: `<a href="/join-us" class="navbar__item navbar__link nav-icon-join" aria-label=""><img src="/img/join-us.svg" alt="" /></a>`,
+          value: `<a href="/join-us" class="navbar__item navbar__link nav-icon-join" aria-label="加入我们"><img src="/img/join-us.svg" alt="加入我们" style="height:20px;vertical-align:middle;margin-right:8px;"/><span class="nav-item-text">加入我们</span></a>`,
         },
       ],
     },
