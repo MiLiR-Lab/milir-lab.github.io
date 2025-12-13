@@ -12,6 +12,23 @@ export interface SimplePromptBlockProps {
   children: React.ReactNode;
 }
 
+export interface TerminalOutputProps {
+  children: React.ReactNode;
+}
+
+export const TerminalOutput: React.FC<TerminalOutputProps> = ({ children }) => <>{children}</>;
+
+const extractText = (node: React.ReactNode): string => {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (React.isValidElement(node)) {
+    const props = (node as React.ReactElement<{ children?: React.ReactNode }>).props;
+    return extractText(props?.children);
+  }
+  return "";
+};
+
 const DEFAULT_PLATFORM_BG = "#22c55e";
 const DEFAULT_LANGUAGE_BG = "#ef4444";
 
@@ -25,6 +42,19 @@ const SimplePromptBlock: React.FC<SimplePromptBlockProps> = ({
   children,
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
+
+  const childNodes = React.Children.toArray(children);
+  let outputChildren: React.ReactNode = null;
+  const mainChildren = childNodes.filter((child) => {
+    if (React.isValidElement(child) && child.type === TerminalOutput) {
+      const el = child as React.ReactElement<TerminalOutputProps>;
+      outputChildren = el.props.children;
+      return false;
+    }
+    return true;
+  });
+
+  const hasOutput = outputChildren != null && extractText(outputChildren).trim().length > 0;
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
@@ -57,12 +87,13 @@ const SimplePromptBlock: React.FC<SimplePromptBlockProps> = ({
       </div>
       {!isCollapsed && (
         <>
-          <div className={styles.body}>{children}</div>
+          <div className={styles.body}>{mainChildren}</div>
           {tip && (
             <div className={styles.footer}>
               <span className={styles.footerLabel}>{tip}</span>
             </div>
           )}
+          {hasOutput && <div className={styles.output}>{outputChildren}</div>}
         </>
       )}
     </div>

@@ -83,6 +83,22 @@
   font-size: 0.85rem;
 }
 
+.output {
+  padding: 0.5rem 0.75rem 0.6rem 0.75rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.output pre {
+  margin: 0;
+  background: transparent;
+}
+
+.output code {
+  font-size: 0.85rem;
+}
+
 .windowControls {
   display: inline-flex;
   align-items: center;
