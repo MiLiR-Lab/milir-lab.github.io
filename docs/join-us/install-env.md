@@ -192,7 +192,7 @@ brew install git
 
 安装完成后，打开终端（Terminal）或命令提示符（Command Prompt），使用以下命令验证 Git 是否安装成功：
 
-<Terminal os="PC@Milir" tip="Windows / Linux / macOS 通用命令">
+<Terminal os="PC@Milir" tip="Windows / Linux / macOS 命令">
 
 ```bash
 git --version
@@ -279,7 +279,7 @@ yarn -v
 ### 验证 Node.js
 
 安装完成后，打开终端（Terminal）或命令提示符（Command Prompt），使用以下命令验证 Node.js 是否安装成功：
-<Terminal os="PC@Milir" tip="Windows / Linux / macOS 通用命令">
+<Terminal os="PC@Milir" tip="Windows / Linux / macOS 命令">
 
 ```bash
 node -v && npm -v && yarn -v
