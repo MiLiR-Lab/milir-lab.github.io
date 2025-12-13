@@ -9,15 +9,21 @@ title: 网站搭建
 
 使用 `git config` 命令设置 Git 的用户名和邮箱地址。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="使用示例">
 
 ```bash
-# git config --global user.name "你的用户名"
-# git config --global user.email "你的邮箱地址"
+git config --global user.name "你的用户名"
+git config --global user.email "你的邮箱地址"
+```
 
+<TerminalOutput>
+
+```bash
 git config --global user.name "Milir"
 git config --global user.email "18179208773@163.com"
 ```
+
+</TerminalOutput>
 
 </Terminal>
 
@@ -25,13 +31,19 @@ git config --global user.email "18179208773@163.com"
 
 使用 `ssh-keygen` 命令生成 SSH 密钥对。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="使用示例">
 
 ```bash
-# ssh-keygen -t ed25519 -C "你的邮箱地址"
+ssh-keygen -t ed25519 -C "你的邮箱地址"
+```
 
+<TerminalOutput>
+
+```bash
 ssh-keygen -t ed25519 -C "18179208773@163.com"
 ```
+
+</TerminalOutput>
 
 </Terminal>
 
@@ -41,7 +53,7 @@ ssh-keygen -t ed25519 -C "18179208773@163.com"
 
 使用 `cat` 命令查看生成的公钥内容。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="">
 
 ```bash
 cat ~/.ssh/id_ed25519.pub
