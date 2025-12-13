@@ -1,0 +1,198 @@
+name: CI and Deploy
+
+on:
+  pull_request: {}
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+  pages: write
+  id-token: write
+
+env:
+  NODE_VERSION: 20
+
+jobs:
+  precommit:
+    name: Pre-commit (lint)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+
+      - name: Install JS dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Build Docusaurus (PR safety build)
+        run: yarn build
+
+      - name: Determine changed files
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+            HEAD_SHA="${{ github.sha }}"
+          fi
+          echo "Diffing $BASE_SHA...$HEAD_SHA"
+          git diff --name-only --diff-filter=AMR "$BASE_SHA" "$HEAD_SHA" > changed_files.txt
+          if [ ! -s changed_files.txt ]; then
+            echo "no_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "no_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run pre-commit on changed files
+        if: steps.changed.outputs.no_changed == 'false'
+        run: |
+          files=$(paste -sd" " changed_files.txt)
+          echo "Running pre-commit on: $files"
+          pre-commit run --files $files
+
+      - name: Set precommit result output
+        if: always()
+        run: echo "precommit_result=${{ job.status }}" >> $GITHUB_OUTPUT
+
+    outputs:
+      precommit_result: ${{ steps.set_precommit_result.outputs.precommit_result || needs }}
+
+  notify-after-precommit:
+    name: Notify after pre-commit
+    needs: precommit
+    runs-on: ubuntu-latest
+    if: always()
+    env:
+      MAINTAINERS_EMAIL: ${{ secrets.MAINTAINERS_EMAIL }}
+      PRECOMMIT_RESULT: ${{ needs.precommit.outputs.precommit_result }}
+    steps:
+      - name: Comment on related PRs
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const eventName = context.eventName;
+            let prs = [];
+            if (eventName === 'pull_request' && context.payload.pull_request) {
+              prs = [context.payload.pull_request];
+            } else if (eventName === 'push') {
+              const sha = context.sha;
+              const { data } = await github.rest.repos.listPullRequestsAssociatedWithCommit({ owner: context.repo.owner, repo: context.repo.repo, commit_sha: sha });
+              prs = data || [];
+            }
+            const result = process.env.PRECOMMIT_RESULT || 'unknown';
+            const body = `Pre-commit finished with result: ${result}.`;
+            for (const pr of prs) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body });
+            }
+
+      - name: Send email to maintainers (if configured)
+        if: ${{ env.MAINTAINERS_EMAIL != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "CI: Pre-commit result: ${{ needs.precommit.outputs.precommit_result }}"
+          to: ${{ secrets.MAINTAINERS_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            Pre-commit finished with result: ${{ needs.precommit.outputs.precommit_result }}
+            Repository: ${{ github.repository }}
+            Event: ${{ github.event_name }}
+
+  deploy:
+    name: Deploy (Pages)
+    needs: [precommit, notify-after-precommit]
+    runs-on: ubuntu-latest
+    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Docusaurus site
+        run: yarn build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  notify-after-deploy:
+    name: Notify after deploy
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: always()
+    env:
+      MAINTAINERS_EMAIL: ${{ secrets.MAINTAINERS_EMAIL }}
+    steps:
+      - name: Comment on related PRs with deploy result
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const eventName = context.eventName;
+            let prs = [];
+            if (eventName === 'pull_request' && context.payload.pull_request) {
+              prs = [context.payload.pull_request];
+            } else if (eventName === 'push') {
+              const sha = context.sha;
+              const { data } = await github.rest.repos.listPullRequestsAssociatedWithCommit({ owner: context.repo.owner, repo: context.repo.repo, commit_sha: sha });
+              prs = data || [];
+            }
+            const conclusion = process.env.GITHUB_JOB || 'deploy';
+            const body = `Deploy finished for commit ${context.sha}.`;
+            for (const pr of prs) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body });
+            }
+
+      - name: Send deploy result email to maintainers (if configured)
+        if: ${{ env.MAINTAINERS_EMAIL != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "DEPLOY: ${{ github.event_name }}"
+          to: ${{ secrets.MAINTAINERS_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            Deploy finished for repository: ${{ github.repository }}
+            Event: ${{ github.event_name }}
+            Ref: ${{ github.ref }}
+            Commit: ${{ github.sha }}
