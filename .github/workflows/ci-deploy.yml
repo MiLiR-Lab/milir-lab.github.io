@@ -72,23 +72,25 @@ jobs:
           pre-commit run --files $files
 
       - name: Set precommit result output
+        id: set_precommit_result
         if: always()
-        run: echo "precommit_result=${{ job.status }}" >> $GITHUB_OUTPUT
+        run: echo "precommit_result=${{ job.status }}" >> "$GITHUB_OUTPUT"
 
     outputs:
-      precommit_result: ${{ steps.set_precommit_result.outputs.precommit_result || needs }}
+      precommit_result: ${{ steps.set_precommit_result.outputs.precommit_result }}
 
   notify-after-precommit:
     name: Notify after pre-commit
     needs: precommit
     runs-on: ubuntu-latest
     if: always()
+    continue-on-error: true
     env:
       MAINTAINERS_EMAIL: ${{ secrets.MAINTAINERS_EMAIL }}
       PRECOMMIT_RESULT: ${{ needs.precommit.outputs.precommit_result }}
     steps:
       - name: Comment on related PRs
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const eventName = context.eventName;
@@ -103,7 +105,15 @@ jobs:
             const result = process.env.PRECOMMIT_RESULT || 'unknown';
             const body = `Pre-commit finished with result: ${result}.`;
             for (const pr of prs) {
-              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body });
+              try {
+                await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body });
+              } catch (e) {
+                const status = e?.status;
+                core.warning(`Skipping PR comment for #${pr.number}: ${e?.message || e}`);
+                if (status && status !== 403) {
+                  throw e;
+                }
+              }
             }
 
       - name: Send email to maintainers (if configured)
@@ -124,9 +134,12 @@ jobs:
 
   deploy:
     name: Deploy (Pages)
-    needs: [precommit, notify-after-precommit]
+    needs: [precommit]
     runs-on: ubuntu-latest
     if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -153,16 +166,21 @@ jobs:
         with:
           path: ./build
 
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
   notify-after-deploy:
     name: Notify after deploy
     needs: deploy
     runs-on: ubuntu-latest
     if: always()
+    continue-on-error: true
     env:
       MAINTAINERS_EMAIL: ${{ secrets.MAINTAINERS_EMAIL }}
     steps:
       - name: Comment on related PRs with deploy result
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const eventName = context.eventName;
@@ -177,7 +195,15 @@ jobs:
             const conclusion = process.env.GITHUB_JOB || 'deploy';
             const body = `Deploy finished for commit ${context.sha}.`;
             for (const pr of prs) {
-              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body });
+              try {
+                await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body });
+              } catch (e) {
+                const status = e?.status;
+                core.warning(`Skipping PR comment for #${pr.number}: ${e?.message || e}`);
+                if (status && status !== 403) {
+                  throw e;
+                }
+              }
             }
 
       - name: Send deploy result email to maintainers (if configured)
