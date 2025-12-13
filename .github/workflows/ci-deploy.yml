@@ -6,12 +6,9 @@ on:
     branches: [ main ]
   workflow_dispatch: {}
 
-permissions:
-  contents: read
-  issues: write
-  pull-requests: read
-  pages: write
-  id-token: write
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   NODE_VERSION: 20
@@ -20,6 +17,8 @@ jobs:
   precommit:
     name: Pre-commit (lint)
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,9 +41,6 @@ jobs:
 
       - name: Install pre-commit
         run: pip install pre-commit
-
-      - name: Build Docusaurus (PR safety build)
-        run: yarn build
 
       - name: Determine changed files
         id: changed
@@ -85,6 +81,9 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     continue-on-error: true
+    permissions:
+      contents: read
+      issues: write
     env:
       MAINTAINERS_EMAIL: ${{ secrets.MAINTAINERS_EMAIL }}
       PRECOMMIT_RESULT: ${{ needs.precommit.outputs.precommit_result }}
@@ -134,12 +133,30 @@ jobs:
 
   deploy:
     name: Deploy (Pages)
-    needs: [precommit]
+    needs: [build]
     runs-on: ubuntu-latest
     if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  build:
+    name: Build (Pages artifact)
+    needs: precommit
+    runs-on: ubuntu-latest
+    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -156,19 +173,14 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build Docusaurus site
-        run: yarn build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=4096"
+          yarn build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
   notify-after-deploy:
     name: Notify after deploy
@@ -176,6 +188,9 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     continue-on-error: true
+    permissions:
+      contents: read
+      issues: write
     env:
       MAINTAINERS_EMAIL: ${{ secrets.MAINTAINERS_EMAIL }}
     steps:
