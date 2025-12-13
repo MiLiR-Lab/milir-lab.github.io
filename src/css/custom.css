@@ -121,13 +121,16 @@ table {
 }
 
 .nav-icon-join {
-  padding: 0;
+  padding: 4px 8px;
   display: inline-flex;
   align-items: center;
-  height: 100%;
 }
 .nav-icon-join img {
-  height: 28px;
+  height: 20px;
   display: block;
-  transform: translateY(3px);
+}
+.nav-icon-join .nav-item-text {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-900);
+  line-height: 1;
 }
