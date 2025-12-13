@@ -9,7 +9,7 @@ title: 网站搭建
 
 使用 `git config` 命令设置 Git 的用户名和邮箱地址。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 # git config --global user.name "你的用户名"
@@ -25,7 +25,7 @@ git config --global user.email "18179208773@163.com"
 
 使用 `ssh-keygen` 命令生成 SSH 密钥对。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 # ssh-keygen -t ed25519 -C "你的邮箱地址"
@@ -41,7 +41,7 @@ ssh-keygen -t ed25519 -C "18179208773@163.com"
 
 使用 `cat` 命令查看生成的公钥内容。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 cat ~/.ssh/id_ed25519.pub
@@ -83,7 +83,7 @@ cat ~/.ssh/id_ed25519.pub
 
 复制 Fork 后的仓库地址，使用 `git clone` 命令将源码拉取到本地。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 git clone git@github.com:WuMinlong/milir-lab.github.io.git
@@ -102,7 +102,7 @@ git clone git@github.com:WuMinlong/milir-lab.github.io.git
 
 进入拉取下来的源码目录，使用 `yarn install` 命令安装项目依赖。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 cd milir-lab.github.io
@@ -115,7 +115,7 @@ yarn install
 
 使用 `yarn start` 命令在本地运行 MiLiR Lab 网站。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 yarn start
@@ -129,7 +129,7 @@ yarn start
 
 运行 `yarn build` 命令编译网站，编译会在 `build` 目录下生成静态文件。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 yarn build
@@ -141,7 +141,7 @@ yarn build
 
 使用 `yarn serve` 命令预览编译后的网站。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 yarn serve
