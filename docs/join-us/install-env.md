@@ -162,7 +162,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 
 使用系统自带的软件包管理工具安装 Git。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 sudo apt update

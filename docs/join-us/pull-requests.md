@@ -7,7 +7,7 @@ title: 参与贡献
 
 在本地对源码进行修改后，使用 `git add` 和 `git commit` 命令将修改提交到本地仓库。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 git add .
@@ -20,7 +20,7 @@ git commit -m "你的提交信息"
 
 使用 `git push` 命令将本地仓库的修改推送到远程仓库。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 安装命令">
+<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
 
 ```bash
 git push
