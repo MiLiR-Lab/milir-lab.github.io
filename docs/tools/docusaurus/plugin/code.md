@@ -258,3 +258,56 @@ print("Hello World")
 
 </TabItem>
 </Tabs>
+
+使用 `<Terminal>` 和 `<TerminalOutput>` 标签实现代码块和终端输出提示效果。
+
+:::tip 实现说明
+
+该功能实现自行参考源码！
+
+:::
+
+<Tabs>
+<TabItem value="markdown" label="实现语法">
+~~~
+
+<Terminal os="Ubuntu@Milir" tip="终端输出示例">
+
+```python
+print("Hello World")
+```
+
+<TerminalOutput>
+
+```bash
+Hello World
+```
+
+</TerminalOutput>
+
+</Terminal>
+
+~~~
+
+</TabItem>
+
+<TabItem value="preview" label="预览效果">
+
+<Terminal os="Ubuntu@Milir" tip="终端输出示例">
+
+```python
+print("Hello World")
+```
+
+<TerminalOutput>
+
+```bash
+Hello World
+```
+
+</TerminalOutput>
+
+</Terminal>
+
+</TabItem>
+</Tabs>

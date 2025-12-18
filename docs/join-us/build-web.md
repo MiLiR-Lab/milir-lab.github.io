@@ -95,7 +95,7 @@ cat ~/.ssh/id_ed25519.pub
 
 复制 Fork 后的仓库地址，使用 `git clone` 命令将源码拉取到本地。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="">
 
 ```bash
 git clone git@github.com:WuMinlong/milir-lab.github.io.git
@@ -114,7 +114,7 @@ git clone git@github.com:WuMinlong/milir-lab.github.io.git
 
 进入拉取下来的源码目录，使用 `yarn install` 命令安装项目依赖。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="">
 
 ```bash
 cd milir-lab.github.io
@@ -127,7 +127,7 @@ yarn install
 
 使用 `yarn start` 命令在本地运行 MiLiR Lab 网站。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="">
 
 ```bash
 yarn start
@@ -141,7 +141,7 @@ yarn start
 
 运行 `yarn build` 命令编译网站，编译会在 `build` 目录下生成静态文件。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="">
 
 ```bash
 yarn build
@@ -153,7 +153,7 @@ yarn build
 
 使用 `yarn serve` 命令预览编译后的网站。
 
-<Terminal os="Linux@Milir" tip="Ubuntu / Debian 命令">
+<Terminal os="Linux@Milir" tip="">
 
 ```bash
 yarn serve
