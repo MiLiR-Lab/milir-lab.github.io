@@ -13,7 +13,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 
 :::tip Windows 平台
 
-Windows 上可以安装 [WSL2（Windows Subsystem for Linux 2）](https://learn.microsoft.com/zh-cn/windows/wsl/) 功能，在 WSL2 内安装 Ubuntu 搭建网站环境！
+Windows 上可以启用 [WSL2(Windows Subsystem for Linux 2）](https://learn.microsoft.com/zh-cn/windows/wsl/) 功能，在 WSL2 内安装 Ubuntu 搭建网站环境！
 
 :::
 
@@ -50,7 +50,7 @@ brew install git
 
 ### 验证 Git
 
-安装完成后，打开终端（Terminal）或命令提示符（Command Prompt），使用以下命令验证 Git 是否安装成功：
+安装完成后，打开系统终端，使用以下命令验证 Git 是否安装成功：
 
 <Terminal os="PC@Milir" tip="终端输出示例">
 
@@ -146,7 +146,7 @@ yarn -v
 
 ### 验证 Node.js
 
-安装完成后，打开终端（Terminal）或命令提示符（Command Prompt），使用以下命令验证 Node.js 是否安装成功：如果显示 Node.js、npm 和 Yarn 的版本号，说明安装 Node.js 成功。
+安装完成后，打开终端（Terminal）或命令提示符（Command Prompt），使用以下命令验证 Node.js 是否安装成功：
 
 <Terminal os="PC@Milir" tip="终端输出示例">
 
@@ -165,4 +165,4 @@ v24.12.0
 
 </Terminal>
 
-
+如果显示 Node.js、npm 和 Yarn 的版本号，说明安装 Node.js 成功。
