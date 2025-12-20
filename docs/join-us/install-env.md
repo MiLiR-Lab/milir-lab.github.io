@@ -13,7 +13,7 @@ Git 是一个免费的、开源的分布式版本控制系统。
 
 :::tip Windows 平台
 
-Windows 上可以启用 [WSL2(Windows Subsystem for Linux 2）](https://learn.microsoft.com/zh-cn/windows/wsl/) 功能，在 WSL2 内安装 Ubuntu 搭建网站环境！
+Windows 上可以启用 [WSL(Windows Subsystem for Linux）](https://learn.microsoft.com/zh-cn/windows/wsl/) 功能，在 WSL 内安装 Ubuntu 搭建网站环境！
 
 :::
 
@@ -81,7 +81,7 @@ Node.js 是一个开源的、跨平台的 JavaScript 运行时环境，允许开
 <Tabs>
   <TabItem value="Windows" label="Windows" default>
 
-启用 [WSL2（Windows Subsystem for Linux 2）](https://learn.microsoft.com/zh-cn/windows/wsl/) 功能, 安装 Ubuntu 系统, 在 Ubuntu 中安装 Node.js。
+启用 [WSL（Windows Subsystem for Linux）](https://learn.microsoft.com/zh-cn/windows/wsl/) 功能, 安装 Ubuntu 系统, 在 Ubuntu 中安装 Node.js。
 
   </TabItem>
   <TabItem value="Linux" label="Linux">
@@ -111,6 +111,22 @@ yarn -v
 ```
 
 </Terminal>
+
+:::tip SSL 证书
+
+若在 WSL 内的 Linux 系统安装 Node.js，可能会出现 SSL 证书错误，可以尝试以下方法：
+
+<Terminal os="Linux@Milir" tip="">
+
+```bash
+git config --global http.sslVerify false
+curl -k -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+git config --global http.sslVerify true
+```
+
+</Terminal>
+
+:::
 
   </TabItem>
   <TabItem value="macOS" label="macOS">
@@ -146,7 +162,7 @@ yarn -v
 
 ### 验证 Node.js
 
-安装完成后，打开终端（Terminal）或命令提示符（Command Prompt），使用以下命令验证 Node.js 是否安装成功：
+安装完成后，打开终端，使用以下命令验证 Node.js 是否安装成功：
 
 <Terminal os="PC@Milir" tip="终端输出示例">
 
