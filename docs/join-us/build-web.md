@@ -298,3 +298,39 @@ $ docusaurus serve
 同一局域网下设备可以访问 `IP:3000` 预览网站。
 
 :::
+
+
+## 配置检查
+
+使用 `pre-commit` 来检查代码。
+
+### 安装 pre-commit
+
+<Terminal os="Linux@Milir" tip="终端输出示例">
+
+```bash
+sudo apt update
+sudo apt install python3-pip -y
+sudo pip3 install pre-commit
+```
+
+</Terminal>
+
+### 配置 pre-commit
+
+<Terminal os="Linux@Milir" tip="终端输出示例">
+
+```bash
+cd milir-lab.github.io
+pre-commit install
+```
+
+<TerminalOutput>
+
+```
+pre-commit installed at .git/hooks/pre-commit
+```
+
+</TerminalOutput>
+
+</Terminal>
