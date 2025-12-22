@@ -12,8 +12,8 @@ title: 网站搭建
 <Terminal os="Linux@Milir" tip="使用示例">
 
 ```bash
-git config --global user.name "你的用户名"
-git config --global user.email "你的邮箱地址"
+git config --global user.name "your-name"
+git config --global user.email "you@example.com"
 ```
 
 <TerminalOutput>
@@ -34,7 +34,7 @@ git config --global user.email "18179208773@163.com"
 <Terminal os="Linux@Milir" tip="使用示例">
 
 ```bash
-ssh-keygen -t ed25519 -C "你的邮箱地址"
+ssh-keygen -t ed25519 -C "you@example.com"
 ```
 
 <TerminalOutput>
