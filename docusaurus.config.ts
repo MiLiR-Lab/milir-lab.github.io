@@ -126,6 +126,11 @@ const config: Config = {
               label: '文档开发',
               docId: 'tools/docusaurus/README',
             },
+            {
+              type: 'doc',
+              label: 'Git 使用',
+              docId: 'tools/git/README',
+            },
           ],
         },
         {
